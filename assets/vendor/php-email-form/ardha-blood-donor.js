@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  let forms = document.querySelectorAll('.php-email-form');
+  let forms = document.querySelectorAll('.delete-blood-bank-request');
 
   forms.forEach( function(e) {
     e.addEventListener('submit', function(event) {
@@ -64,12 +64,11 @@
     // })
     .then(data => {
       thisForm.querySelector('.loading').classList.remove('d-block');
-      // if (data.trim() == 'OK') {
-      //   thisForm.querySelector('.sent-message').classList.add('d-block');
-      //   thisForm.reset(); 
+      // if (data == 'OK') {
+        thisForm.querySelector('.sent-message').classList.add('d-block');
+        thisForm.reset(); 
       // } else {
         // throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
-        throw new Error('Something went wrong!!!'); 
       // }
     })
     .catch((error) => {
