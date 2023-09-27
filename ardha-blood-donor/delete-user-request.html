@@ -58,37 +58,13 @@
 
 <body>
     <!-- ======= Top Bar ======= -->
-    <div id="topbar" class="fixed-top d-flex align-items-center ">
+    <div id="topbar" class="fixed-top d-flex align-items-center " style="background-color: #007aff;">
         <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
-                <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">ardhaapps@gmail.com</a>
-            </div>
-            <div class="cta d-none d-md-block">
-                <a href="#about" class="scrollto">Get Started</a>
+                <i class="bi bi-envelope-fill"></i><a href="mailto:ardhaapps@gmail.com">ardhaapps@gmail.com</a>
             </div>
         </div>
     </div>
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center ">
-        <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo"><a href="index.html">Ardha Apps</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href=index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                    <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-                    <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
-                    <!-- <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li> -->
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
-            <!-- .navbar -->
-        </div>
-    </header>
 
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact">
@@ -97,8 +73,8 @@
                     <h2>Delete Ardha Blood Donor</h2>
                 </div>
                 <div class="row mt-1 d-flex justify-content-end" data-aos="fade-right" data-aos-delay="100">
-                    <div class="col-lg-12 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="100">
-                        <form action="#" method="post" role="form" class="php-email-form1">
+                    <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="100">
+                        <form action="#" method="post" role="form" class="form-data delete-blood-bank-request">
                             <div class="form-group mt-3">
                                 <input type="text" class="form-control" name="email" placeholder="Email / Mobile" required>
                             </div>
@@ -110,7 +86,7 @@
                                 <div class="error-message"></div>
                                 <div class="sent-message">Your Account will verified and it will delete in 90 days. Thank you!</div>
                             </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
+                            <div class="text-center"><button type="submit">Delete Request</button></div>
                         </form>
                     </div>
                 </div>
@@ -144,8 +120,7 @@
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="terms_and_conditions.html">Terms of
-                                    service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="terms_and_conditions.html">Terms of service</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="privacy-policy.html">Privacy policy</a>
                             </li>
                         </ul>
@@ -165,12 +140,9 @@
                         <h3>About Ardhaappps</h3>
                         <p>Every great app starts with a simple idea.</p>
                         <div class="social-links mt-3">
-                            <a href="https://www.facebook.com/ardhaapps" target="_blank" class="facebook"><i
-                                    class="bx bxl-facebook"></i></a>
-                            <a href="https://play.google.com/store/apps/dev?id=7097080369253578616" target="_blank"
-                                class="google-plus"><i class="bx bxl-play-store"></i></a>
-                            <a href="https://www.instagram.com/ardhaapps/" target="_blank" class="google-plus"><i
-                                    class="bx bxl-instagram"></i></a>
+                            <a href="https://www.facebook.com/ardhaapps" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://play.google.com/store/apps/dev?id=7097080369253578616" target="_blank" class="google-plus"><i class="bx bxl-play-store"></i></a>
+                            <a href="https://www.instagram.com/ardhaapps/" target="_blank" class="google-plus"><i class="bx bxl-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -178,21 +150,19 @@
         </div>
         <div class="container">
             <div class="copyright">
-                &copy; Copyright 2019 - <span id="copy-right-year"></span> <strong><span>Ardha Apps</span></strong>. All
-                Rights Reserved
+                &copy; Copyright 2019 - <span id="copy-right-year"></span> <strong><span>Ardha Apps</span></strong>. All Rights Reserved
             </div>
         </div>
     </footer>
     <!-- End Footer -->
     <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     <!-- Vendor JS Files -->
     <script src="../assets/vendor/aos/aos.js"></script>
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="../assets/vendor/php-email-form/validate.js"></script>
+    <script src="../assets/vendor/php-email-form/ardha-blood-donor.js"></script>
     <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
     <!-- Template Main JS File -->
     <script src="../assets/js/main.js"></script>
@@ -203,7 +173,7 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 </body>
-<script src="assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">
     $('#copy-right-year').html(new Date().getFullYear());
 </script>
