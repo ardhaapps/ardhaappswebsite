@@ -2413,3 +2413,84 @@ section {
 #footer .credits a {
   color: #f6b024;
 }
+
+
+.contact .form-data {
+  width: 100%;
+  background: #fff;
+}
+
+.contact .form-data .form-group {
+  padding-bottom: 8px;
+}
+
+.contact .form-data .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .form-data .error-message br + br {
+  margin-top: 25px;
+}
+
+.contact .form-data .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .form-data .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.contact .form-data .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .form-data input, .contact .form-data textarea {
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.contact .form-data input {
+  height: 44px;
+}
+
+.contact .form-data textarea {
+  padding: 10px 12px;
+}
+
+.contact .form-data button[type="submit"] {
+  border: 0;
+  padding: 10px 32px;
+  color: #0880e8;
+  transition: 0.4s;
+  border-radius: 50px;
+  border: 2px solid #0880e8;
+  background: #fff;
+}
+
+.contact .form-data button[type="submit"]:hover {
+  background: #0880e8;
+  color: #fff;
+}
