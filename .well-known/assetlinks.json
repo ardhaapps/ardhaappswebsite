@@ -1,0 +1,50 @@
+[
+    {
+      "relation": [
+        "delegate_permission/common.handle_all_urls"
+      ],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.ardhaapps.natural.beauty.tips.tamil",
+        "sha256_cert_fingerprints": [
+          "6A:4D:64:B4:11:B1:D4:04:6A:B4:06:F8:8E:0F:17:DD:5D:93:17:8C:B7:E6:B3:B2:0D:CB:E4:78:27:F8:4E:FA"
+        ]
+      }
+    },
+    {
+        "relation": [
+          "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+          "namespace": "android_app",
+          "package_name": "com.ardhaapps.tamil.mooligai.herbal.plants",
+          "sha256_cert_fingerprints": [
+            "F2:46:19:FC:CA:EA:DF:50:90:13:DB:DA:EA:7A:F9:00:FA:6E:12:6A:F2:73:EA:73:64:56:A7:3E:3F:AC:96:65"
+          ]
+        }
+      },
+      {
+        "relation": [
+          "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+          "namespace": "android_app",
+          "package_name": "com.ardhaapps.indian.food.recipes",
+          "sha256_cert_fingerprints": [
+            "9C:08:35:67:FE:DC:94:6F:35:88:D9:C3:C9:E6:31:F6:1F:AF:90:5D:26:27:8C:EF:C7:DA:7A:09:F0:4D:E0:48"
+          ]
+        }
+      },
+      {
+        "relation": [
+          "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+          "namespace": "android_app",
+          "package_name": "com.ardhaapps.indian.food.recipes.tamil",
+          "sha256_cert_fingerprints": [
+            "66:41:59:FB:DA:B2:1C:B8:72:6A:20:97:DF:3C:24:E8:18:32:C8:63:20:DE:23:63:75:5E:6C:7E:6B:32:54:D6"
+          ]
+        }
+      }
+  ]
