@@ -8,24 +8,54 @@
 
 
 <url>
-  <loc>http://ardhaapps.com/</loc>
-  <lastmod>2023-04-08T04:24:17+00:00</lastmod>
+  <loc>https://ardhaapps.com/</loc>
+  <lastmod>2024-10-19T03:55:01+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://ardhaapps.com/index.html</loc>
-  <lastmod>2023-04-08T04:24:17+00:00</lastmod>
+  <loc>https://ardhaapps.com/index.html</loc>
+  <lastmod>2024-10-19T03:55:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://ardhaapps.com/terms_and_conditions.html</loc>
-  <lastmod>2023-04-08T04:24:17+00:00</lastmod>
+  <loc>https://ardhaapps.com/siruthaniyam-food-recipe/</loc>
+  <lastmod>2024-10-19T03:55:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://ardhaapps.com/privacy-policy.html</loc>
-  <lastmod>2023-04-08T04:24:17+00:00</lastmod>
+  <loc>https://ardhaapps.com/ardha-blood-donor/</loc>
+  <lastmod>2024-10-19T03:55:01+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ardhaapps.com/hindi-bhagavad-gita/</loc>
+  <lastmod>2024-10-19T03:55:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ardhaapps.com/terms_and_conditions.html</loc>
+  <lastmod>2024-10-19T03:55:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ardhaapps.com/privacy-policy.html</loc>
+  <lastmod>2024-10-19T03:55:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ardhaapps.com/siruthaniyam-food-recipe/index.html</loc>
+  <lastmod>2024-10-19T03:55:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ardhaapps.com/ardha-blood-donor/index.html</loc>
+  <lastmod>2024-10-19T03:55:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ardhaapps.com/hindi-bhagavad-gita/index.html</loc>
+  <lastmod>2024-10-19T03:55:01+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
