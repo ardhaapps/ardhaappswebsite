@@ -46,5 +46,18 @@
             "66:41:59:FB:DA:B2:1C:B8:72:6A:20:97:DF:3C:24:E8:18:32:C8:63:20:DE:23:63:75:5E:6C:7E:6B:32:54:D6"
           ]
         }
-      }
+      },
+    {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "ardhaapps.hindi.bhagavad.gita",
+      "sha256_cert_fingerprints": [
+        "5D:68:14:69:23:76:A8:60:70:AD:19:BE:85:63:86:49:43:4E:4E:29:4A:57:02:EB:CF:C1:97:51:FC:B3:47:D8"
+      ]
+    }
+  }
   ]
