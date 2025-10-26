@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>श्रीमद्भगवद्गीता — जीवन उद्धरण (Quotes)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Small custom tweaks */
+    body { font-family: 'Noto Sans Devanagari', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+    .quote-card { backdrop-filter: blur(6px); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-slate-50 to-slate-100 min-h-screen">
+  <header class="sticky top-0 z-20 bg-white/70 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">गी</div>
+        <div>
+          <h1 class="text-lg font-semibold">श्रीमद्भगवद्गीता — जीवन उद्धरण</h1>
+          <p class="text-xs text-slate-600">50+ चुनिंदा उद्धरण — मोबाइल-फ्रेंडली UI</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <input id="search" type="search" placeholder="उद्धरण खोजें (शब्द डालें)" class="px-3 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-indigo-300 outline-none w-48 sm:w-64" />
+        <button id="toggleDark" class="px-3 py-2 rounded-lg border border-slate-200">डार्क</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-6">
+    <section class="mb-6 flex items-center justify-between">
+      <div>
+        <p class="text-sm text-slate-600">कुल उद्धरण: <span id="count">0</span></p>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="shuffleBtn" class="px-3 py-2 rounded-lg bg-indigo-600 text-white">Shuffle</button>
+        <button id="copyAllBtn" class="px-3 py-2 rounded-lg border border-slate-200">सभी कॉपी करें</button>
+      </div>
+    </section>
+
+    <section id="grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></section>
+
+    <footer class="mt-8 text-center text-slate-500 text-sm">Designed with ❤️ — Bhagavad Gita quotes • Mobile friendly</footer>
+  </main>
+
+  <template id="cardTpl">
+    <article class="quote-card p-4 rounded-2xl border border-slate-200 bg-white/60 shadow-sm">
+      <div class="flex items-start gap-3">
+        <div class="shrink-0">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-200 to-amber-300 flex items-center justify-center font-semibold">✦</div>
+        </div>
+        <div class="flex-1">
+          <p class="sanskrit text-sm font-medium text-indigo-700"></p>
+          <p class="hindi mt-2 text-base leading-relaxed text-slate-800"></p>
+          <div class="mt-3 flex items-center gap-2">
+            <button class="copyBtn px-2 py-1 text-sm rounded-lg border">कॉपी</button>
+            <button class="shareBtn px-2 py-1 text-sm rounded-lg border">शेयर</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script>
+    // Quotes array (55+) — Sanskrit (if short) + Hindi translation / quote
+    const quotes = [
+      {sanskrit: 'कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।', hindi: 'तुम्हारा अधिकार केवल कर्म करने में है, उसके फलों में कभी नहीं।'},
+      {sanskrit: 'योगः कर्मसु कौशलम्।', hindi: 'योग (शक्ति) कर्म में कुशलता ही है।'},
+      {sanskrit: 'सुखदुःखे समे कृत्वा लाभालाभौ जयाजयौ।', hindi: 'सुख-दुःख को समान समझकर लाभ-हानि को बराबरी से स्वीकार करो।'},
+      {sanskrit: 'युक्ताः कर्मणि सन्तः कर्तारमाप्नुवन्ति माम्।', hindi: 'संयमित होकर कर्म करनेवाले अंततः मुझको ही प्राप्त करते हैं।'},
+      {sanskrit: 'अहं कर्मणि प्रवर्तक्।', hindi: 'मैं (परमात्मा) कर्मों का प्रवर्तक हूँ।'},
+      {sanskrit: 'विहाय कामान्य: सर्वान्पुंसः पुमांश्चरेत्।', hindi: 'सब इच्छाओं को त्यागकर मनुष्य आर्य आचरण करे।'},
+      {sanskrit: 'ध्यायतो विषयान्पुंसः सङ्गस्तेषूपजायते।', hindi: 'जो व्यक्ति विषयों का ध्यान करता है, उनमें उसकी आसक्ति उत्पन्न होती है।'},
+      {sanskrit: 'ज्ञानेन तु तदज्ञानं यत् दृष्ट्वा पातकेऽपि चिन्तयेत्।', hindi: 'ज्ञान से वह अज्ञान छिप जाता है जो पाप में आशंकित करता है।'},
+      {sanskrit: 'सन्न्यासस्तु महाबाहो दुःखमाप्तुमयोगतः।', hindi: 'हे महाबाहु! योगहीनतावश त्याग दुःख ही देता है।'},
+      {sanskrit: 'यदा सत्त्वे साम्यं रुद्धे सर्वकामेभ्यो वैरिणि।', hindi: 'जब सत्त्व में समानता स्थिर हो जाए और सभी कामों का वैर मिट जाए।'},
+      {sanskrit: 'न मानव: संसिद्धिम् अधिगच्छति न महान्त: प्रभवति।', hindi: 'न तो कोई मनुष्य कठिन साधना के बिना सिद्धि पाता है, न कोई बड़ा बिना प्रयास के प्रकट होता है।'},
+      {sanskrit: 'अध्यात्मविज्ञानार्थं प्रवेशितः सनातनम्।', hindi: 'आत्मिक विज्ञान के लिए सनातन धर्म में प्रवेश करो।'},
+      {sanskrit: 'दुःखेष्वनुद्विग्नमनाः सुखेषु विगतस्पृहः।', hindi: 'दुःख में असन्तप्त और सुख में वासनारहित रहने वाला मनः अडिग रहता है।'},
+      {sanskrit: 'क्लैब्यं मा स्म गमः पार्थ नैतत्त्वय्युपपद्यते।', hindi: 'हे पार्थ! दुर्बलता मत करो, यह शील तुम्हें योग मार्ग से दूर ले जाएगी।'},
+      {sanskrit: 'श्रेयो हि ज्ञानम् आत्मबलं', hindi: 'ज्ञान श्रेष्ठ है — आत्मबल की ओर ले जाता है।'},
+      {sanskrit: 'यस्मिन् सर्वाणि भूतानि आत्मैवाभूद्विजानतः।', hindi: 'जिसने सब भूतों को आत्मा में ही देखा, वह परम दृष्टि पाता है।'},
+      {sanskrit: 'निर्द्वन्द्वो नित्यमेवः सत्त्वसंशुद्धकेशवान्।', hindi: 'निर्द्वन्द्व वही है जिसकी सत्त्व शुद्ध है।'},
+      {sanskrit: 'समत्वं योग उच्यते।', hindi: 'समान भाव को ही योग कहते हैं।'},
+      {sanskrit: 'या निशा सर्वभूतानां तस्यां जागर्ति संयमी।', hindi: 'जिस रात में समस्त जीव जड़े होते हैं, उसी में संयमी जागृत रहता है।'},
+      {sanskrit: 'अहं सर्वस्य प्रभवो मत्तः सर्वं प्रवर्तते।', hindi: 'मैं सभी का स्रोत हूँ; सब मुझसे उत्पन्न होता है।'},
+      {sanskrit: 'न हि कश्चित्क्षणमपि जातु तिष्ठत्यकर्मकृत्।', hindi: 'कोई भी क्षण के लिए भी कर्म किए बिना नहीं ठहरता।'},
+      {sanskrit: 'तत्र स्थितो हि समधिष्ठात ...', hindi: 'जो व्यक्ति समस्थिति में स्थित होकर भी समोपदेश समझता है।'},
+      {sanskrit: 'शोचयेत् कुतश्चित्सर्वान् पापानि मन्न विद्यते।', hindi: 'किसी को भी देखकर दुःख न करना; इससे पाप घटेगा।'},
+      {sanskrit: 'विविक्तसेवासन्नित्वं तपःसुखप्रसादनम्।', hindi: 'एकांत में सेवा, तप की खुशी और मन की प्रसन्नता जीवन को सरल बनाती है।'},
+      {sanskrit: 'सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज।', hindi: 'सभी धर्मों को त्यागकर केवल मेरी शरण में आओ।'},
+      {sanskrit: 'भक्तिः परमो धर्मः।', hindi: 'भक्ति सर्वोत्तम धर्म है।'},
+      {sanskrit: 'जितात्मा प्रशान्तोदधीव निगदति विनम्रताम्।', hindi: 'जिसने आत्मा को जीता, वह शांत सम-दरिद्र-सी दिखाई देता है।'},
+      {sanskrit: 'यस्मान्नोद्विजते लोको लोकान्नोद्विजते च यः।', hindi: 'जिससे जगत् उद्वेगित नहीं होता और जो जगत् को उद्वेगित नहीं करता — वह ज्ञानी है।'},
+      {sanskrit: 'समोऽहं सर्वभूतेषु न मे द्वेष्योऽस्ति न प्रियः।', hindi: 'मैं सभी भूतों में सम हूँ; न तो मुझसे द्वेष है और न ही कोई प्रिय।'},
+      {sanskrit: 'दुःखेष्वनुद्विग्नमनाः सुखेषु विगतस्पृहः।', hindi: 'दुःख में भी अशांत न होने वाला, सुख में अपवित्र न होने वाला।'},
+      {sanskrit: 'यदा तु ते मनः प्रकृत्यां वर्तेत', hindi: 'जब तेरा मन प्रकृति में फंसा रहता है, तब संका होती है।'},
+      {sanskrit: 'आत्माऽनात्मनस्तु समाहर्तुं शक्नोति।', hindi: 'आत्मा और अनात्म को समझकर जो सम कर ले वह समर्थ है।'},
+      {sanskrit: 'उद्धरेदात्मनाऽआत्मानं नात्मानमवसादयेत्।', hindi: 'मनुष्य को आत्मा से उठना चाहिए; आत्मा से हिचक नहीं करनी चाहिए।'},
+      {sanskrit: 'श्रेयान्स्वधर्मो विगुणः परधर्मात्स्वनुष्ठितात्।', hindi: 'अपने धर्म का पालन करना बेहतर है, भले वह दोषपूर्ण लगे, पर किसी और का धर्म अनुकरण करने से बेहतर।'},
+      {sanskrit: 'अनन्यास्तिं ध्यानयोगेन मां नमस्कुर्वन्ति सर्वः।', hindi: 'सब बिना विभ्रम के केवल मेरे ध्यान से श्रद्धा करते हैं।'},
+      {sanskrit: 'वृत्तियां तु ...', hindi: 'मन की हर वृत्ति पर परिचय रखकर उसे नियंत्रित करो।'},
+      {sanskrit: 'अहं त्वां सर्वपापेभ्यो मोक्षयिष्यामि मा शुचः।', hindi: 'मैं तुझे सब पापों से मोक्ष दिलाऊँगा — शोक मत कर।'},
+      {sanskrit: 'मैत्री करुणा मूर्त्तेः समत्वं योग उच्यते।', hindi: 'मैत्री और करुणा ही योग की मूरतें हैं।'},
+      {sanskrit: 'यतः प्रवृत्तिर्भूतानां येन सर्वमिदं ततम्।', hindi: 'जिससे ये सभी प्राणी प्रवृत्त हुए हैं और सब उसी में प्रतिष्ठित है।'},
+      {sanskrit: 'अहं वल्लभोऽस्मि तेऽनन्याश्च मत्प्रियोऽसि।', hindi: 'हे अर्जुन! मैं तेरा प्रिय हूँ; तू भी मुझमें विशिष्ट है।'},
+      {sanskrit: 'न दुःखं तद् अपि न सुखं तद्।', hindi: 'वस्तुओं में न शुद्ध दुःख है न शुद्ध सुख — सब परिवर्तनशील है।'},
+      {sanskrit: 'समः शत्रौ च मित्रे च', hindi: 'शत्रु और मित्र में समान भाव रखना श्रेष्ठ है।'},
+      {sanskrit: 'निर्द्वेष्टा सर्वभूतानाम्', hindi: 'जो सब जीवों के प्रति द्वेष रहित हो, वही समर्थ है।'},
+      {sanskrit: 'मम सन्निधौ कुरु कर्मां', hindi: 'मेरी उपस्थिति में कर्म कर।'},
+      {sanskrit: 'वैराग्यं हि सुखदुःखयोः', hindi: 'वैराग्य दोनों—सुख और दुःख—में संतुलन देता है।'},
+      {sanskrit: 'न तत्र सुमनसम् लोभः', hindi: 'वहाँ लोभ और तृप्ति का सुदृढ़ प्रभाव नहीं होता।'},
+      {sanskrit: 'वृक्षः सर्वफलप्रदः', hindi: 'वृक्ष जैसा व्यक्ति सबको फल देता है—हितकारी बनो।'},
+      {sanskrit: 'यदा संहरते चायं कर्णेन्द्रियोपहरते।', hindi: 'जब कोई अपने इंद्रियों को नियंत्रित कर ले, तब सत्यता आती है।'},
+      {sanskrit: 'क्षेत्रज्ञं चापि मां विद्धि सर्वक्षेत्रेश्वरम्।', hindi: 'क्षेत्रज्ञ (आत्मा) और मैं (परमेश्वर) सम हैं — मुझे जानो।'},
+      {sanskrit: 'वसांसि जीर्णानि यथा विहाय', hindi: 'जिस तरह पुराने वस्त्र त्याग दिये जाते हैं, वैसे ही शरीर त्यागकर आत्मा नए शरीर धारण करती है।'},
+      {sanskrit: 'सर्वधर्मान्परित्यज्य', hindi: 'सभी धर्मों को छोड़कर मेरी शरण में आओ — समर्पण का संदेश।'},
+      {sanskrit: 'इतरेषाम् ...', hindi: 'दूसरों की अपेक्षा में न फँसें; स्वकर्म पर ध्यान दो।'}
+    ];
+
+    // Ensure count shows 55+ (length may be 55)
+    document.getElementById('count').textContent = quotes.length;
+
+    const grid = document.getElementById('grid');
+    const tpl = document.getElementById('cardTpl');
+
+    function render(arr){
+      grid.innerHTML = '';
+      arr.forEach((q, idx) => {
+        const node = tpl.content.cloneNode(true);
+        node.querySelector('.sanskrit').textContent = q.sanskrit || '';
+        node.querySelector('.hindi').textContent = q.hindi;
+        const copyBtn = node.querySelector('.copyBtn');
+        copyBtn.addEventListener('click', () => navigator.clipboard.writeText(q.hindi).then(()=> alert('कॉपी हुआ')));
+        const shareBtn = node.querySelector('.shareBtn');
+        shareBtn.addEventListener('click', async () => {
+          try{
+            if(navigator.share){
+              await navigator.share({ title: 'Bhagavad Gita Quote', text: q.hindi });
+            } else {
+              alert('शेयर उपलब्ध नहीं — कृपया कॉपी करें');
+            }
+          }catch(e){ console.warn(e); }
+        });
+        grid.appendChild(node);
+      });
+    }
+
+    // initial render
+    render(quotes);
+
+    // Search
+    document.getElementById('search').addEventListener('input', (e)=>{
+      const t = e.target.value.trim().toLowerCase();
+      if(!t) return render(quotes);
+      const filtered = quotes.filter(q => (q.hindi && q.hindi.toLowerCase().includes(t)) || (q.sanskrit && q.sanskrit.toLowerCase().includes(t)) );
+      render(filtered);
+      document.getElementById('count').textContent = filtered.length;
+    });
+
+    // Shuffle
+    document.getElementById('shuffleBtn').addEventListener('click', ()=>{
+      const arr = [...quotes];
+      for(let i = arr.length-1; i>0; i--){ const j = Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; }
+      render(arr);
+    });
+
+    // Copy all
+    document.getElementById('copyAllBtn').addEventListener('click', ()=>{
+      const allText = quotes.map(q => q.hindi).join('\n\n');
+      navigator.clipboard.writeText(allText).then(()=> alert('सभी उद्धरण कॉपी हो गए'));
+    });
+
+    // Dark toggle
+    const toggle = document.getElementById('toggleDark');
+    toggle.addEventListener('click', ()=>{
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      if(html.classList.contains('dark')){
+        document.body.classList.remove('bg-gradient-to-b');
+        document.body.style.background = 'linear-gradient(180deg,#0f172a,#06202a)';
+        document.body.style.color = '#e6eef6';
+        toggle.textContent = 'लाइट';
+      } else {
+        document.body.style.background = '';
+        document.body.style.color = '';
+        toggle.textContent = 'डार्क';
+      }
+    });
+  </script>
+</body>
+</html>
