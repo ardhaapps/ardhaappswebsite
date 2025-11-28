@@ -1,1 +1,508 @@
 
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disha Cup Sambrani - Karthigai & Ayyappan Special 🪔</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Baloo Thambi 2', cursive;
+      background: linear-gradient(135deg, #fff7f7, #fffdf5);
+      color: #2d1b2b;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    header {
+      background: #ffffffcc;
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #ffe0ec;
+    }
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+    }
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: #c2185b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .logo-text span {
+      font-size: 24px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      font-size: 14px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      padding: 4px 8px;
+      border-radius: 20px;
+    }
+    .nav-links a:hover {
+      background: #ffe4f0;
+    }
+
+    .hero {
+      padding: 24px 0 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .hero-left, .hero-right {
+      flex: 1 1 300px;
+    }
+    .tag {
+      display: inline-block;
+      background: #ffe1f0;
+      color: #c2185b;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: 26px;
+      margin: 8px 0;
+      color: #e53935;
+    }
+    .hero-sub {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .hero-points p {
+      margin: 4px 0;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #f50261, #ff7ca8);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: 0 6px 16px rgba(245, 2, 97, 0.3);
+      margin-right: 10px;
+      margin-top: 6px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.03);
+      box-shadow: 0 10px 22px rgba(245, 2, 97, 0.35);
+    }
+    .btn-outline {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1px dashed #f50261;
+      color: #f50261;
+      font-size: 14px;
+      font-weight: 600;
+      background: #fff;
+      margin-top: 6px;
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      text-align: center;
+      border: 1px solid #ffe0ef;
+    }
+    .hero-product {
+      width: 100%;
+      max-width: 260px;
+      height: 220px;
+      margin: 0 auto 10px;
+      border-radius: 18px;
+      background: radial-gradient(circle at top, #fff5c5, #ffdee9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+    }
+    .hero-card p {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    .price-section {
+      padding: 10px 0 0 0;
+    }
+    .price-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 18px 16px;
+      border: 1px solid #ffd1e2;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .price-left {
+      flex: 1 1 200px;
+    }
+    .price-label {
+      font-size: 14px;
+      color: #888;
+    }
+    .price-value {
+      font-size: 26px;
+      font-weight: 800;
+      color: #2e7d32;
+    }
+    .price-note {
+      font-size: 13px;
+      color: #555;
+    }
+    .price-right {
+      text-align: right;
+      flex: 1 1 200px;
+    }
+    .price-right p {
+      font-size: 14px;
+      margin: 4px 0;
+    }
+
+    section {
+      margin-top: 26px;
+    }
+    h2.section-title {
+      font-size: 20px;
+      color: #7b1fa2;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .section-sub {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 14px;
+    }
+
+    .flavour-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+    }
+    .flavour-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ffe0f0;
+      font-size: 14px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+    }
+
+    .benefits-list p {
+      margin: 6px 0;
+      font-size: 15px;
+    }
+
+    .icon-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .icon-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 12px;
+      text-align: center;
+      border: 1px solid #ffe6f0;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+      font-size: 14px;
+    }
+    .icon-emoji {
+      font-size: 32px;
+      margin-bottom: 4px;
+    }
+
+    .order-box {
+      background: #fffaf6;
+      border-radius: 18px;
+      padding: 16px;
+      border: 1px dashed #ffa726;
+      text-align: center;
+    }
+    .order-box p {
+      margin: 6px 0;
+      font-size: 15px;
+    }
+    .contact-box {
+      margin-top: 10px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 26px;
+      padding: 16px 0 26px 0;
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+    }
+
+    .wa-float {
+      position: fixed;
+      bottom: 18px;
+      right: 16px;
+      z-index: 99;
+    }
+    .wa-float a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      background: #25D366;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      font-size: 30px;
+      color: #fff;
+    }
+    .wa-label {
+      position: fixed;
+      bottom: 78px;
+      right: 18px;
+      background: #ffffffee;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      color: #333;
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+      .hero {
+        padding-top: 18px;
+      }
+      .price-right {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating WhatsApp Bubble -->
+  <div class="wa-label">WhatsApp மூலம் ஆர்டர் செய்ய 👇</div>
+  <div class="wa-float">
+    <a href="https://wa.me/917402429664?text=Swami%20Saranam%21%20I%20want%20to%20order%20Disha%20Cup%20Sambrani%20-%20Karthigai%20%26%20Ayyappan%20Special%20Pack" target="_blank" aria-label="Order on WhatsApp">
+      💬
+    </a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-bar">
+      <div class="logo-text">
+        <span>🪔</span> Disha Cup Sambrani
+      </div>
+      <nav class="nav-links">
+        <a href="#benefits">Benefits</a>
+        <a href="#flavours">Flavours</a>
+        <a href="#ayyappan">Ayyappan Use</a>
+        <a href="#order">Order</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="tag">✨ Karthigai Deepam & Swami Ayyappan Special ✨</div>
+        <h1 class="hero-title">Disha Cup Sambrani - கார்த்திகை & ஐயப்பன் Special 🪔🙏</h1>
+        <p class="hero-sub">
+          கார்த்திகை மாதம் வந்தாலே… தீப ஒளி, பக்தி, ஆன்மீக நிறைவு!  
+          🪔 வீட்டில் நல்ல ஆற்றல் பரவ, 😌 மன அமைதி கிடைக்க,  
+          ஸ்வாமி ஐயப்பன் மாலை தரிச்சு விரதம் இருக்கும் பக்தர்களுக்கு
+          சிறந்த துணைவன் 👉 <b>Disha Cup Sambrani</b>
+        </p>
+        <div class="hero-points">
+          <p>🔥 100% இயற்கை மூலிகைகளால் தயாரிக்கப்பட்ட Cup Sambrani.</p>
+          <p>💖 தினமும் ஏற்றி விட்டு ஸ்வாமி படத்துக்கு முன் பூஜை பண்ணீங்கனா,  
+             குடும்ப நலம், செல்வ வளம், பக்தி உணர்வு எல்லாம் அதிகரிக்கும்.</p>
+        </div>
+
+        <a class="btn-primary" href="#order">🛒 Buy Now – Rs.219</a>
+        <a class="btn-outline" href="https://wa.me/917402429664?text=Yes%2C%20I%20want%20Karthigai%20%26%20Ayyappan%20Special%20Disha%20Cup%20Sambrani" target="_blank">
+          📲 “Swami Saranam” என்று WhatsApp-ல அனுப்புங்க
+        </a>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <!-- Replace this with product image -->
+          <div class="hero-product">
+            🔥🪔
+          </div>
+          <p><b>8 Flavours Cup Sambrani | 50 Pcs</b></p>
+          <p>🎇 Karthigai Deepam & Ayyappan Pooja Special Pack</p>
+          <p>💰 Special Price: <b>Rs.219 மட்டுமே!</b></p>
+          <p>🔥 Limited Period – Karthigai மாதத்துல தான் இந்த offer!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Price Box -->
+    <section class="price-section">
+      <div class="price-card">
+        <div class="price-left">
+          <div class="price-label">இன்றைய Special Offer Price</div>
+          <div class="price-value">Rs.219</div>
+          <div class="price-note">
+            8 Flavours Cup Sambrani | 50 Pieces | கார்த்திகை & ஸ்வாமி ஐயப்பன் Special 🎉
+          </div>
+        </div>
+        <div class="price-right">
+          <p>🪔 கார்த்திகை தீப தினத்துக்கு முன்பே வீட்டுக்கு கொண்டு போய்டுங்க.</p>
+          <p>🙏 ஸ்வாமி ஐயப்பன் மாலை கட்டுறவர்கள் தினமும் ஏற்றி வைக்க perfect.</p>
+          <a class="btn-primary" href="#order">Order Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section id="benefits">
+      <h2 class="section-title">ஏன் Disha Cup Sambrani – கார்த்திகை & ஐயப்பன் Special? 🤔</h2>
+      <p class="section-sub">Deepam, Vratham, Pooja – எல்லாத்துக்கும் ஒரு divine support ✨</p>
+      <div class="benefits-list">
+        <p>🏡 வீட்டில் நல்ல positive energy பரவ உதவும் – தீப ஒளியோட சேர்ந்து வாசனை பரவும்.</p>
+        <p>😌 விரதம் இருக்கும் போது மனம் calm ஆக, கவனமா ஜெபம் பண்ண உதவும்.</p>
+        <p>🙏 <b>“Swamiye Saranam Ayyappa”</b> ஜெபம், Irumudi Pooja, Evening Bhajan எல்லாத்துக்கும் perfect.</p>
+        <p>🪔 கார்த்திகை தினம், ஒவ்வொரு தீபத்துடனும் Cup Sambrani ஏற்றி வச்சா ஆலய மாதிரி feel வரும்.</p>
+      </div>
+    </section>
+
+    <!-- Flavours Section -->
+    <section id="flavours">
+      <h2 class="section-title">🌸 8 Divine Flavours – Bhakti Atmosphere க்கான வாசனைகள்</h2>
+      <p class="section-sub">
+        Sandal | Rose | Thalampoo | Dasangam | Pineapple | Black Dasangam | Panjakavyam | Nandhi
+      </p>
+
+      <div class="flavour-grid">
+        <div class="flavour-card">🌼 Sandal – ஆலய வாசனை</div>
+        <div class="flavour-card">🌹 Rose – மென்மையான பூ வாசனை</div>
+        <div class="flavour-card">🌺 Thalampoo – பாரம்பரிய விநாயகர்/முருகன் feel</div>
+        <div class="flavour-card">🕉️ Dasangam – தீபாராதனைக்கு classic choice</div>
+        <div class="flavour-card">🍍 Pineapple – லேசான fruit freshness</div>
+        <div class="flavour-card">🌓 Black Dasangam – ஆலய சமய வாசனை</div>
+        <div class="flavour-card">🌿 Panjakavyam – பாரம்பரிய பூஜை touch</div>
+        <div class="flavour-card">🐂 Nandhi – சிவன் ஆலய சூழல் போன்ற வாசனை</div>
+      </div>
+    </section>
+
+    <!-- Icons / Image Section -->
+    <section>
+      <h2 class="section-title">🔥 இந்த மாதம் எங்கெல்லாம் Disha Cup Sambrani பயன்படும்?</h2>
+      <p class="section-sub">Karthigai Deepam, Ayyappan Pooja, Mandala Kalam, Daily Deepam எல்லாத்துக்கும் use பண்ணலாம்</p>
+
+      <div class="icon-section">
+        <div class="icon-card">
+          <div class="icon-emoji">🪔</div>
+          <p><b>Karthigai Deepam</b><br>வீட்டின் எல்லா மூலையும் தீபம் & Sambrani ஏற்றி ஆலயமா மாற்றலாம்.</p>
+        </div>
+        <div class="icon-card">
+          <div class="icon-emoji">🙏</div>
+          <p><b>Ayyappan Pooja</b><br>மாலை கட்டுறவர்கள் காலை/மாலை பூஜை சமயத்தில் ஏற்ற perfect.</p>
+        </div>
+        <div class="icon-card">
+          <div class="icon-emoji">🧘‍♂️</div>
+          <p><b>Vratham & Dhyanam</b><br>மண்டல காலம் முழுக்க ஜெபம், தியானம், பஜனைக்கான சூழல் அமைக்க உதவும்.</p>
+        </div>
+        <div class="icon-card">
+          <div class="icon-emoji">🏠</div>
+          <p><b>Daily Home Use</b><br>குடும்ப நலன், அமைதி, நல்ல ஆற்றல் – தினசரி ஒரு cup ஏற்றினாலே போதும்.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ayyappan Special Small Section -->
+    <section id="ayyappan">
+      <h2 class="section-title">🙏 ஸ்வாமி ஐயப்பன் பக்தர்களுக்கான சிறப்பு பரிந்துரை</h2>
+      <p class="section-sub">“Swamiye Saranam Ayyappa” என்று சொல்ற ஒவ்வொரு ஜெபத்துக்கும் இந்த வாசனை ஒரு support போல இருக்கும்</p>
+      <div class="order-box">
+        <p>🟡 காலை – Nirmalyam பண்ணரும் நேரம் / Harivarasanam கேட்கும் நேரம்</p>
+        <p>🟣 மாலை – Deeparathanai, Pooja, Ayyappan songs, Bhajan சமயத்தில்</p>
+        <p>இரண்டு வேளையும் ஒரு Cup Sambrani ஏற்றி வச்சா,  
+          வீட்டுலே Sabarimala sannidhi மாதிரி divine feel வரும் 🕉️</p>
+      </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order">
+      <h2 class="section-title">📦 Karthigai & Ayyappan Special Pack – இப்போதே ஆர்டர் பண்ணுங்க</h2>
+      <p class="section-sub">“Yes” அல்லது “Swami Saranam” என்று WhatsApp / SMS பண்ணினாலே நாங்க call/WhatsApp பண்ணிடுவோம் 🤝</p>
+
+      <div class="order-box">
+        <p>🪔 <b>8 Flavours Cup Sambrani | 50 Pcs</b></p>
+        <p>💰 <b>Price: Rs.219 மட்டுமே!</b></p>
+        <p>🎇 Karthigai மாதம் & Mandala Kalam Special – Limited Period Offer!</p>
+
+        <a class="btn-primary" href="https://wa.me/917402429664?text=Swami%20Saranam%21%20Please%20book%20one%20Karthigai%20%26%20Ayyappan%20Special%20Disha%20Cup%20Sambrani%20Pack%20for%20me" target="_blank">
+          📲 WhatsApp மூலம் ஆர்டர் செய்ய
+        </a>
+        <br />
+        <a class="btn-outline" href="tel:+917402429664">📞 Call: 7402429664</a>
+      </div>
+
+      <div class="contact-box" id="contact">
+        <p>🤝 மேலும் தொடர்புக்கு:</p>
+        <p><b>Disha Cup Sambrani</b></p>
+        <p>📞 7402429664, 9942385589</p>
+        <p>👉 Instagram: 
+          <a href="https://www.instagram.com/disha_cup_sambrani?igsh=bDN3dHRkZDEwa3gx" target="_blank">
+            @disha_cup_sambrani
+          </a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    🪔 Disha Cup Sambrani – Karthigai தீப ஒளியோடும், ஸ்வாமி ஐயப்பன் அருளோடும், உங்கள் வீட்டை ஆன்மீகமாக மாற்றுங்கள் ✨🙏
+  </footer>
+
+</body>
+</html>
